@@ -52,7 +52,7 @@ variable "lambda_function_package" {
 
 variable "lambda_s3_bucket"{
   type = string
-  default = "event-lambda-function"
+  default = "sst-event-lambda-function"
   description = "S3 bucket where lambda function is uploaded."
 }
 

@@ -1,4 +1,4 @@
-s3_bucket_names 		= ["user-events", "user-subscription-events", "user-lesson-events", "event-lambda-function"]
+s3_bucket_names 		= ["sst-user-events", "sst-subscription-events", "sst-lesson-events", "sst-event-lambda-function"]
 lambda_service_role_policy 	= "../policies/LambdaServicePolicy.json"
 lambda_execution_policy 	= "../policies/LambdaExecutionPolicy.json"
 dynamodb_table_name 		= "user-subscriptions"
