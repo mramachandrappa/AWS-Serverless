@@ -26,6 +26,7 @@ variable "dynamodb_billing_mode" {
   default = "PROVISIONED"
   description = "To control read and write throughput charges and to manage capacity"
 }
+
 variable "dynamodb_read_capacity"{
   type = number
   default = 5
@@ -67,6 +68,7 @@ variable "lambda_queue_type_fifo" {
   default = true
   description = "Boolean designating a FIFO queue. If not set, it defaults to false making it standard."
 }
+
 variable "visibility_timeout_seconds" {
   type = number
   default = 30
