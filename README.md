@@ -1,8 +1,8 @@
 # Event Driven Solution
 
 Scope
-
-```Design a system composed of one or more services that consumes events from a
+```
+Design a system composed of one or more services that consumes events from a
 stream. Some types of the events should be stored for further operations while others should be
 enriched and forwarded as explained below.
 The events coming from the stream are:
@@ -18,21 +18,21 @@ each for a different language. A specific lesson can be associated with one lang
 only. All events should be forwarded to another, output stream after processing.
 
 We can assume that the events are pushed to the stream in the correct order for a given user, for
-example, a subscription event will never enter the stream before the user (create) event. ```
-
+example, a subscription event will never enter the stream before the user (create) event.
+```
 
 AWS Services used..
 ```
 IAM         =   For managing access and permissions.
 Lambda      =   Trigger functions to process events.
-SQS         =   As a input stream to receive events from application.
+SQS         =   As a message queue to receive events from application.
 DynamoDB    =   To store user subscription data.
 S3          =   To store all events after processing.
 ```
 
 ## Architecture Design
 
-* Assuming events are pushed to SQS queue from Babbel application.
+* Assuming events are pushed to SQS queue from application.
 
 1. On successfully receiving events from application to SQS FIFO Queue, "lambda" will gets triggered which pulls events in a batch wise.
 2. User/subscription events - Based on create or update operation, lambda updates the dynamodb table that stores user subscriptions.
