@@ -1,16 +1,31 @@
-# Babbel Events Processing
+# Event Driven Solution
 
-A Project to consume events from stream and process them.
+Scope
 
-## Design Choices
+```Design a system composed of one or more services that consumes events from a
+stream. Some types of the events should be stored for further operations while others should be
+enriched and forwarded as explained below.
+The events coming from the stream are:
+● user events, with average throughput of 20 per second
+● subscription events, 5 per second
+● lesson events, 100 per second
+(see attached json schemas)
+The system should store the current state of a user subscription in a database. This state information should be used to
+enrich lesson events by adding subscription_status, subscription_type (from
+subscription event) and country (from user event) attributes for all users. This subscription
+data should match the language of the lesson. A user can be associated with multiple subscriptions,
+each for a different language. A specific lesson can be associated with one language and one user
+only. All events should be forwarded to another, output stream after processing.
 
-I have choose to implement Serverless Architecture for given scenario.
+We can assume that the events are pushed to the stream in the correct order for a given user, for
+example, a subscription event will never enter the stream before the user (create) event. ```
+
 
 AWS Services used..
 ```
 IAM         =   For managing access and permissions.
 Lambda      =   Trigger functions to process events.
-SQS         =   As a input stream to receive and send events in a order they received and to avoid sending event twice.
+SQS         =   As a input stream to receive events from application.
 DynamoDB    =   To store user subscription data.
 S3          =   To store all events after processing.
 ```
