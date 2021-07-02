@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/user/schema.json",
+  "title": "user",
+  "description": "Emitted by backend on user change",
+  "properties": {
+    "operation": {
+      "type": "string",
+      "description": "create or update"
+    },
+    "name": {
+      "type": "string",
+      "description": "user name"
+    },
+    "uuid": {
+      "type": "string",
+      "description": "uuid of the user"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string",
+      "description": "country the user is registered in"
+    },
+    "active": {
+      "type": "boolean",
+      "description": "is the user active in the system"
+    }
+  }
+}

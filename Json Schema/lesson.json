@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lesson/schema.json",
+  "description": "Emitted by the backend when a lesson has been completed by a user",
+  "title": "lesson",
+  "type": "object",
+  "properties": {
+    "content_release_id": {
+      "type": "string",
+      "description": "content release version where this lesson was completed"
+    },
+    "title": {
+      "type": "string",
+      "description": "title of the lesson"
+    },
+    "language": {
+      "type": "string",
+      "description": "language of the lesson"
+    },    
+    "course_uuid": {
+      "type": "string",
+      "description": "UUID of the course"
+    },
+    "course_title": {
+      "type": "string",
+      "description": "Title of the course"
+    },
+    "number_of_lessons_in_course": {
+      "type": "integer",
+      "description": "Number of lessons in course"
+    },
+    "completed_lessons_in_course": {
+      "type": "integer",
+      "description": "Number of completed lessons in course (including current one)"
+    },
+    "percentage_completed_in_course": {
+      "type": "integer",
+      "description": "Percentage of this course already completed by this user"
+    },
+    "user_uuid": {
+      "type": "string",
+      "description": "uuid of the user"
+    }
+  }
+}

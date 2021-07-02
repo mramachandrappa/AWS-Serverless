@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/subscription/schema.json",
+  "title": "subscription",
+  "description": "Emitted by backend on user subscription change",
+  "properties": {
+    "operation": {
+      "type": "string",
+      "description": "create or update"
+    },
+    "name": {
+      "type": "string",
+      "description": "subscription name"
+    },
+    "user_uuid": {
+      "type": "string",
+      "description": "uuid of the user"
+    },
+    "language": {
+      "type": "string",
+      "description": "language of the lesson"
+    },  
+    "subscription_status": {
+      "type": "string"
+    },
+    "subscription_type": {
+      "type": "string"
+    },
+    "subscription_period": {
+      "type": "integer",
+      "description": "period of subscription in days"
+    }
+  }
+}
